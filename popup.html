@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bilibili Summarizer</title>
+  <meta charset="UTF-8">
+  <style>
+    body { 
+      width: 350px; 
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      padding: 10px;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      font-size: 18px;
+      text-align: center;
+      color: #333;
+    }
+    #controls, #settingsLink {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 15px;
+    }
+    input[type="text"] {
+      width: 95%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #status { 
+      margin-top: 15px;
+      padding: 10px;
+      background-color: #e9ecef;
+      border-radius: 4px;
+      text-align: center;
+      font-weight: bold;
+    }
+    #summary { 
+      margin-top: 15px; 
+      white-space: pre-wrap; 
+      background: #fff;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+    a {
+      color: #007bff;
+      text-decoration: none;
+      text-align: center;
+      display: block;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bilibili 视频总结</h1>
+  
+  <div id="controls">
+    <input type="text" id="videoUrl" placeholder="粘贴 Bilibili 视频链接">
+    <button id="summarizeBtn">开始总结</button>
+  </div>
+
+  <div id="status">请粘贴链接并点击开始</div>
+  <div id="summary" hidden></div>
+
+  <div id="settingsLink">
+    <a href="#" id="openOptionsPage">设置 OpenRouter API Key</a>
+  </div>
+
+  <script src="popup.js" type="module"></script>
+</body>
+</html>
